@@ -61,13 +61,13 @@ data/
 │  │  └─ GSE37642_Survival_data.txt
 │  ├─ beat/
 │  │  ├─ beataml_wv1to4_clinical.xlsx
-│  │  └─ gdc_sample_sheet.2024-05-28.tsv
-│  │     ├─ Bulk/
-│  │     └─ tcga/
-│  │        ├─ gdc_sample_sheet.2024-04-30.tsv
-│  │        ├─ TCGA_clinical_data_from_gdc.cancer.gov.tsv
-│  │        ├─ TCGA_NEJM_clinical(updated).xlsx
-│  │        └─ Bulk/
+│  │  ├─ gdc_sample_sheet.2024-05-28.tsv
+│  │  └─ Bulk/
+│  ├─ tcga/
+│  │  ├─ gdc_sample_sheet.2024-04-30.tsv
+│  │  ├─ TCGA_clinical_data_from_gdc.cancer.gov.tsv
+│  │  ├─ TCGA_NEJM_clinical(updated).xlsx
+│  │  └─ Bulk/
 ├─ in_vitro_chemo_rna_seq/
 │  ├─ genelevel_DESeq_deg_CYT_unfiltered.csv
 │  ├─ genelevel_DESeq_deg_VEN_unfiltered.csv
@@ -89,7 +89,7 @@ requirements/
 results/
 ├─ marker_gene_overlaps_between_leiden_clusters.xlsx
 ├─ poor_prog_upreg.log
-├─ prog_and_de_table.xlsx                 # DE genes + prognosis association
+├─ prog_and_de_table.xlsx                 #  genes showing at least one instance of DE and prognosis association
 ├─ figure_outputs_chea3/
 ├─ figure_outputs_fishers_exact_3x3_tests/
 ├─ figure_outputs_poor_prog_upreg/
