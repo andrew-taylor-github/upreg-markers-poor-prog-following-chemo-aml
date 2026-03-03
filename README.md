@@ -45,61 +45,49 @@ RECOMMENDED TO USE POWERSHELL SCRIPT INSTEAD AS IT SPECIFIES ONLY MAJOR PACKAGES
 
 ## 📂 Repository Structure
 
-|   README.md
-|
-+---data 				#input files
-|   |   Integrated_meanRank.tsv		#chEA3 output file (TF inference)
-|   |   regev_lab_cell_cycle_genes.txt		#used for cell cycle scoring in scRNA-seq analysis
-|   |
-|   +---biomart_gene_annotations		#gene mappings (ENSGs, Probes, HUGO)
-|   |       biomart_export.txt
-|   |       u133a2_to_ensg.txt
-|   |       u133b_to_ensg.txt
-|   |       u133plus2_to_ensg.txt
-|   |
-|   +---cohort_data 			#each cohort has metadata, survival time. gene expression files are omitted due to large size
-|   |   +---amlcg
-|   |   |       GSE37642_family.soft
-|   |   |       GSE37642_Survival_data.txt
-|   |   |
-|   |   +---beat
-|   |   |   |   beataml_wv1to4_clinical.xlsx
-|   |   |   |   gdc_sample_sheet.2024-05-28.tsv
-|   |   |   |
-|   |   |   \---Bulk
-|   |   \---tcga
-|   |       |   gdc_sample_sheet.2024-04-30.tsv
-|   |       |   TCGA_clinical_data_from_gdc.cancer.gov.tsv
-|   |       |   TCGA_NEJM_clinical(updated).xlsx
-|   |       |
-|   |       \---Bulk
-|   |
-|   \---in_vitro_chemo_rna_seq 		#experiment done in-vitro (bulk and single cell)
-|           genelevel_DESeq_deg_CYT_unfiltered.csv
-|           genelevel_DESeq_deg_VEN_unfiltered.csv
-|           genelevel_DESeq_deg_VINC_unfiltered.csv
-|           IR-DT-084.h5ad
-|           IR004_kallisto_raw.h5ad
-|
-+---intermediate_file_outputs		
-|   |   cox_ph_fit_dict.pkl			#intermediate file storing Cox PH regression results (for convenience, takes several minutes to compute)
-|   |
-|   \---3x3_tables_for_R			#input into R scripts in 'src'
-|
-+---requirements				#anaconda environment specifications
-|       minimal_reqs_bpu_attempt1.txt
-|
-+---results				
-|   |   marker_gene_overlaps_between_leiden_clusters.xlsx
-|   |   poor_prog_upreg.log
-|   |   prog_and_de_table.xlsx		#genes that show differential expression following treatment with at least one of the chemo drugs and prognosis association in at least one of the cohorts
-|   |
-|   +---figure_outputs_chea3
-|   +---figure_outputs_fishers_exact_3x3_tests
-|   +---figure_outputs_poor_prog_upreg
+README.md
+data/
+├─ Integrated_meanRank.tsv # chEA3 output file (TF inference)
+├─ regev_lab_cell_cycle_genes.txt # cell cycle scoring for scRNA-seq
+├─ biomart_gene_annotations/
+│ ├─ biomart_export.txt
+│ ├─ u133a2_to_ensg.txt
+│ ├─ u133b_to_ensg.txt
+│ └─ u133plus2_to_ensg.txt
+├─ cohort_data/
+│ ├─ amlcg/
+│ │ ├─ GSE37642_family.soft
+│ │ └─ GSE37642_Survival_data.txt
+│ ├─ beat/
+│ │ ├─ beataml_wv1to4_clinical.xlsx
+│ │ └─ gdc_sample_sheet.2024-05-28.tsv
+│ │ ├─ Bulk/
+│ │ └─ tcga/
+│ │ ├─ gdc_sample_sheet.2024-04-30.tsv
+│ │ ├─ TCGA_clinical_data_from_gdc.cancer.gov.tsv
+│ │ ├─ TCGA_NEJM_clinical(updated).xlsx
+│ │ └─ Bulk/
+├─ in_vitro_chemo_rna_seq/
+│ ├─ genelevel_DESeq_deg_CYT_unfiltered.csv
+│ ├─ genelevel_DESeq_deg_VEN_unfiltered.csv
+│ ├─ genelevel_DESeq_deg_VINC_unfiltered.csv
+│ ├─ IR-DT-084.h5ad
+│ └─ IR004_kallisto_raw.h5ad
+├─ intermediate_file_outputs/
+│ └─ cox_ph_fit_dict.pkl # Cox PH regression results
+├─ 3x3_tables_for_R/ # input into R scripts in 'src'
+├─ requirements/
+│ └─ minimal_reqs_bpu_attempt1.txt
+└─ results/
+├─ marker_gene_overlaps_between_leiden_clusters.xlsx
+├─ poor_prog_upreg.log
+├─ prog_and_de_table.xlsx # DE genes + prognosis association
+├─ figure_outputs_chea3/
+├─ figure_outputs_fishers_exact_3x3_tests/
+└─ figure_outputs_poor_prog_upreg/
 
-\---src
-    |   chea3.ipynb				#shows top inferred TFs and their regulons
-    |   fishers_exact_3x3_tests.R		#the initial enrichment analysis (this is for 3x3 tables, the 'poor_prog_upreg_analysis.ipynb' is just the post-hoc fisher's exact test for 2x2 tables)
-    |   poor_prog_upreg_analysis.ipynb		#RUN THIS FIRST
-    |   vinc_scrna.ipynb			#scrna seq experiments
+src/
+├─ chea3.ipynb # top inferred TFs and regulons
+├─ fishers_exact_3x3_tests.R # initial enrichment analysis
+├─ poor_prog_upreg_analysis.ipynb # RUN THIS FIRST
+└─ vinc_scrna.ipynb # scRNA-seq experiments
