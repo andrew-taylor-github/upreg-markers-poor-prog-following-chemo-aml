@@ -1,0 +1,5 @@
+# ========================================
+# Conda Environment Setup using Powershell 
+# ========================================
+
+conda create -n ppu_r_env -c conda-forge r-base r-svglite r-gridextra rstudio
