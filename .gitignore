@@ -1,0 +1,16 @@
+data/cohort_data
+data/in_vitro_chemo_rna_seq
+
+results/
+!results/figure_outputs*/
+
+intermediate_file_outputs/**
+!intermediate_file_outputs/cox_ph_fit_dict.pkl #pre-computed PH regression
+
+requirements/*
+!requirements/ppu*
+
+*.log
+*.ipynb_checkpoints
+*.Rdata
+*.RHistory
