@@ -18,7 +18,7 @@ Download, clean, and normalize cohort data → Perform Cox Proportional Hazards 
 
 1. **Download Additional Files into Cloned Repository**
    - data/in_vitro_chemo_rna_seq/ files will be downloadable from Zenodo, download them into this directory
-   - download the [GDC Data Transfer Tool](https://gdc.cancer.gov/access-data/gdc-data-transfer-tool) and navigate to cohort_data/tcga/bulk and cohort_data/beat/Bulk. In each directory there is a MANIFEST.txt file. Use the Transfer tool from the command line and from within the "Bulk/" directories the run the following command to download all patient bulk seq files from the GDC portal: 
+   - download the [GDC Data Transfer Tool](https://gdc.cancer.gov/access-data/gdc-data-transfer-tool) and navigate to cohort_data/tcga/bulk and cohort_data/beat/Bulk. In each directory there is a MANIFEST.txt file. Use the Transfer tool from the command line and from within the "Bulk/" directories run the following command to download all patient bulk seq files from the GDC portal: 
    
    gdc-client download -m MANIFEST.TXT
 
