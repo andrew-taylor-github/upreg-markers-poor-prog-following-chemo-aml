@@ -22,7 +22,7 @@ Download, clean, and normalize cohort data → Perform Cox Proportional Hazards 
    
    gdc-client download -m MANIFEST.TXT
 
-   - Download gzipped version of the ['GSE37642_family.soft'](https://ftp.ncbi.nlm.nih.gov/geo/series/GSE37nnn/GSE37642/soft/GSE37642_family.soft.gz) from the ncbi GEO database and store unzipped file under data/cohort_data_amlcg
+   - Download gzipped version of the ['GSE37642_family.soft'](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE37642) from the ncbi GEO database and store unzipped file under data/cohort_data_amlcg
 
 2. **Setup Conda Env**
    - .yaml file available in requirements folder with exhaustive dependency list
